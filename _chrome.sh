@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Load util functions
-source utils.sh
+source _utils.sh
 
 print_title "Chrome"
 
