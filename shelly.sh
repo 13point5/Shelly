@@ -1,14 +1,18 @@
 #!/bin/sh
 
-# Making all scripts executable
+# Make all scripts executable
 find ./ -name "*.sh" -exec chmod u+rx {} \;
 
 # Load util functions
 source _utils.sh
 
-# Softwares dir
-SOFTWARE_DIR=~/Softwares
+# Dir vars
+PROJECT_DIR=$(dirname $(realpath $0))
+PROG_DIR="$PROJECT_DIR/programs"
+TOOL_DIR="$PROJECT_DIR/tools"
+STYLE_DIR="$PROJECT_DIR/styles"
 
+# Softwares dir
 if [ -d "$SOFTWARE_DIR" ]; then
   print_title "Software directory already exists!"
 else
@@ -25,13 +29,8 @@ sudo apt-get upgrade -y
 print_title "Installing utils"
 sudo apt-get install curl xclip figlet tree -y
 
-# Script dirs
-PROG_DIR=./programs
-TOOL_DIR=./tools
-STYLE_DIR=./styles
-
 # Styling
-bash $STYLE_DIR/style.sh 
+bash $STYLE_DIR/style.sh
 
 # Git and Github
 bash $TOOL_DIR/github.sh
@@ -44,3 +43,6 @@ bash $PROG_DIR/vscode.sh
 
 # Atom
 bash $PROG_DIR/atom.sh
+
+# Slack
+bash $PROG_DIR/slack.sh

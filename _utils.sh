@@ -1,6 +1,7 @@
 #!/bin/sh
 
-# A collection of utility functions to use in other scripts
+# Dir vars
+SOFTWARE_DIR="$HOME/Softwares"
 
 # Print title/message of what's going on
 print_title() {

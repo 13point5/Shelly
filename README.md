@@ -17,7 +17,7 @@ $ bash shelly.sh
 - [x] VS Code
 - [x] Atom
 - [x] Wallpaper
-- [ ] Slack
+- [x] Slack
 - [ ] Spotify
 - [ ] Gnome tweak tools
 - [ ] Gnome Shell extensions

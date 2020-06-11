@@ -5,7 +5,7 @@ ROOT_DIR=$(dirname $(dirname $(realpath $0)))
 source "$ROOT_DIR/_utils.sh"
 
 install_atom() {
-  ATOM_DEB=$SOFTWARE_DIR/atom.deb
+  ATOM_DEB="$SOFTWARE_DIR/atom.deb"
 
   if [ ! -f "$ATOM_DEB" ]; then
     wget https://atom.io/download/deb -O $ATOM_DEB
