@@ -1,9 +1,8 @@
 #!/bin/sh
 
-# Load util functions
-source _utils.sh
-
-print_title "Git & Github"
+# Get util functions
+ROOT_DIR=$(dirname $(dirname $(realpath $0)))
+source "$ROOT_DIR/_utils.sh"
 
 # Install Git
 install_apt git "Git"
@@ -23,10 +22,10 @@ if [ ! $(grep user.email <<< "$GIT_USER_INFO") ] ; then
 fi
 
 # Add SSH key to Github
-print_title "Adding SSH key to Github"
 SSH_KEY_PATH=~/.ssh/id_rsa.pub
 
 if [ ! -f "$SSH_KEY_PATH" ]; then
+  print_title "Adding SSH key to Github"
   echo -n "[Github] Enter your username: " ; read GIT_USERNAME
   echo -n "[Github] Enter your unique machine name for SSH KEY: " ; read GIT_MACHINE_NAME
   ssh-keygen -t rsa -b 4096 -C $GIT_EMAIL

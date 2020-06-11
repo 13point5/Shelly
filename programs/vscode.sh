@@ -1,9 +1,8 @@
 #!/bin/sh
 
-# Load util functions
-source _utils.sh
-
-print_title "VS Code"
+# Get util functions
+ROOT_DIR=$(dirname $(dirname $(realpath $0)))
+source "$ROOT_DIR/_utils.sh"
 
 # VS Code
 install_vscode() {

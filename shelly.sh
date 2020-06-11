@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Making all scripts executable
-chmod a+rx *.sh
+find ./ -name "*.sh" -exec chmod u+rx {} \;
 
 # Load util functions
 source _utils.sh
@@ -25,14 +25,19 @@ sudo apt-get upgrade -y
 print_title "Installing utils"
 sudo apt-get install curl xclip figlet tree -y
 
+# Script dirs
+PROG_DIR=./programs
+TOOL_DIR=./tools
+STYLE_DIR=./styles
+
 # Git and Github
-bash _github.sh
+bash $TOOL_DIR/github.sh
 
 # Chrome
-bash _chrome.sh
+bash $PROG_DIR/chrome.sh
 
 # VS Code
-bash _vscode.sh
+bash $PROG_DIR/vscode.sh
 
 # Atom
-bash _atom.sh
+bash $PROG_DIR/atom.sh
