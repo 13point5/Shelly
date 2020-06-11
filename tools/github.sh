@@ -11,18 +11,25 @@ install_apt git "Git"
 print_title "Setting up Git"
 GIT_USER_INFO=$(git config -l)
 
+# Set name if not set
 if [ ! $(grep user.name <<< "$GIT_USER_INFO") ] ; then
   echo -n "[Git] Enter your name: " ; read GIT_NAME
   git config --global user.name "$GIT_NAME"
 fi
 
-if [ ! $(grep user.email <<< "$GIT_USER_INFO") ] ; then
+# Set email if not set. Otherwise read it for the SSH key
+GIT_EMAIL_INFO=$(grep user.email <<< "$GIT_USER_INFO")
+if [ ! $GIT_EMAIL_INFO ] ; then
   echo -n "[Git] Enter your email address: " ; read GIT_EMAIL
   git config --global user.email "$GIT_EMAIL"
+else
+  IFS='='
+  read -a GIT_EMAIL_INFO <<< "$GIT_EMAIL_INFO"
+  GIT_EMAIL=${GIT_EMAIL_INFO[1]}
 fi
 
 # Add SSH key to Github
-SSH_KEY_PATH=~/.ssh/id_rsa.pub
+SSH_KEY_PATH=${HOME}/.ssh/id_rsa.pub
 
 if [ ! -f "$SSH_KEY_PATH" ]; then
   print_title "Adding SSH key to Github"
