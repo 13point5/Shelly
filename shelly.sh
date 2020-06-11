@@ -30,6 +30,9 @@ PROG_DIR=./programs
 TOOL_DIR=./tools
 STYLE_DIR=./styles
 
+# Styling
+bash $STYLE_DIR/style.sh 
+
 # Git and Github
 bash $TOOL_DIR/github.sh
 
