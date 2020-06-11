@@ -3,6 +3,14 @@ A shell script to setup a fresh installation of Ubuntu(GNOME) with stuff I usual
 
 ![Sheldon on Ubuntu](images/sheldon-ubuntu.png)
 
+## How to use it?
+```shell
+$ git clone https://github.com/13point5/Shelly.git
+$ cd Shelly
+$ chmod u+rx shelly.sh
+$ bash shelly.sh
+```
+
 ## Features
 - [x] Configuring Git & Github
 - [x] Chrome
