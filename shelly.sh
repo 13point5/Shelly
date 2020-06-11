@@ -46,3 +46,6 @@ bash $PROG_DIR/atom.sh
 
 # Slack
 bash $PROG_DIR/slack.sh
+
+# Spotify
+bash $PROG_DIR/spotify.sh

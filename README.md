@@ -18,7 +18,7 @@ $ bash shelly.sh
 - [x] Atom
 - [x] Wallpaper
 - [x] Slack
-- [ ] Spotify
+- [x] Spotify
 - [ ] Gnome tweak tools
 - [ ] Gnome Shell extensions
 - [ ] Theme, Icon pack and Cursor
