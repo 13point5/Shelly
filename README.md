@@ -11,8 +11,12 @@ $ chmod u+rx shelly.sh
 $ bash shelly.sh
 ```
 
-## Features
+## What can it do?
+
+### Tools
 - [x] Configuring Git & Github
+
+### Programs
 - [x] Chrome
 - [x] VS Code
 - [x] Atom
@@ -20,8 +24,16 @@ $ bash shelly.sh
 - [x] Slack
 - [x] Spotify
 - [x] Gnome tweak tools
+
+### Styling
 - [x] Gnome Shell extensions
-- [ ] Theme, Icon pack and Cursor
+- [x] GDM theme
+- [ ] GTK theme
+- [ ] Shell theme
+- [ ] Icon pack
+- [ ] Cursor pack
 - [ ] Terminal color scheme
 - [ ] Nerd Fonts (Ubuntu Mono for now)
+
+### Miscellaneous
 - [ ] Custom Prompt & Aliases
