@@ -11,8 +11,7 @@ source "$ROOT_DIR/_utils.sh"
 install_extensions() {
   EXTENSIONS="$1/*.zip"
 
-  for EXT in $EXTENSIONS
-  do
+  for EXT in $EXTENSIONS ; do
     EXT_UUID=$(unzip -c "$EXT" metadata.json | grep uuid | cut -d \" -f4)
     EXT_PATH="$HOME/.local/share/gnome-shell/extensions/$EXT_UUID"
 
