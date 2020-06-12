@@ -11,7 +11,7 @@ source "$ROOT_DIR/_utils.sh"
 install_gdm_theme() {
   print_title "Backing up old gdm theme"
   old_gdm_path="/usr/share/gnome-shell/theme"
-  backup_gdm_path="/usr/share/gnome-shell/theme-$(date)"
+  backup_gdm_path="/usr/share/gnome-shell/theme-backup-$(date +%s)"
   sudo cp -r $old_gdm_path $backup_gdm_path
 
   print_title "Setting new gdm theme"
