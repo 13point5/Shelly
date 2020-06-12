@@ -15,9 +15,8 @@ install_gdm_theme() {
   sudo cp -r $old_gdm_path $backup_gdm_path
 
   print_title "Setting new gdm theme"
-  new_gdm_path=$1
   sudo rm -rf $old_gdm_path
-  sudo cp -r $new_gdm_path $old_gdm_path
+  sudo unzip -q $1 -d $old_gdm_path
 }
 
-install_gdm_theme "$CURR_DIR/theme/gdm/theme"
+install_gdm_theme "$CURR_DIR/theme/gdm/theme.zip"
