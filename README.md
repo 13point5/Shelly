@@ -9,25 +9,29 @@ $ git clone https://github.com/13point5/Shelly.git
 $ cd Shelly
 $ chmod u+rx shelly.sh
 $ bash shelly.sh
+$ reboot
 ```
 
 ## What can it do?
 
 ### Tools
-- [x] Configuring Git & Github
+- [x] Git
+- [x] Adding SSH key on GitHub
+- [ ] Node with nvm
+- [ ] Yarn
 
 ### Programs
 - [x] Chrome
 - [x] VS Code
 - [x] Atom
-- [x] Wallpaper
 - [x] Slack
 - [x] Spotify
 - [x] Gnome tweak tools
 
 ### Styling
+- [x] Wallpaper
 - [x] Gnome Shell extensions
-- [x] GDM theme
+- [ ] GDM theme
 - [ ] GTK theme
 - [ ] Shell theme
 - [ ] Icon pack
@@ -36,4 +40,6 @@ $ bash shelly.sh
 - [ ] Nerd Fonts (Ubuntu Mono for now)
 
 ### Miscellaneous
+- [x] Figlet
+- [x] xclip
 - [ ] Custom Prompt & Aliases

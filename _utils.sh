@@ -1,6 +1,4 @@
 
-# Dir vars
-SOFTWARE_DIR="$HOME/Softwares"
 
 # Print title/message of what's going on
 print_title() {

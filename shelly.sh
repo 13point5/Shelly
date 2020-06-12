@@ -12,14 +12,6 @@ PROG_DIR="$PROJECT_DIR/programs"
 TOOL_DIR="$PROJECT_DIR/tools"
 STYLE_DIR="$PROJECT_DIR/styles"
 
-# Softwares dir
-if [ -d "$SOFTWARE_DIR" ]; then
-  print_title "Software directory already exists!"
-else
-  print_title "Making directory to store softwares at $SOFTWARE_DIR"
-  mkdir -p $SOFTWARE_DIR
-fi
-
 # Update and Upgrade
 print_title "Updating and Upgrading"
 sudo apt-get update -y
@@ -30,22 +22,10 @@ print_title "Installing utils"
 sudo apt-get install curl xclip figlet tree -y
 
 # Styling
-bash $STYLE_DIR/style.sh
+bash $STYLE_DIR/styles.sh
 
-# Git and Github
-bash $TOOL_DIR/github.sh
+# Tools
+bash $TOOL_DIR/tools.sh
 
-# Chrome
-bash $PROG_DIR/chrome.sh
-
-# VS Code
-bash $PROG_DIR/vscode.sh
-
-# Atom
-bash $PROG_DIR/atom.sh
-
-# Slack
-bash $PROG_DIR/slack.sh
-
-# Spotify
-bash $PROG_DIR/spotify.sh
+# Programs
+bash $PROG_DIR/programs.sh

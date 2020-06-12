@@ -8,14 +8,23 @@ source "$ROOT_DIR/_utils.sh"
 # Params
 #   $1 -> file location
 set_wallpaper() {
-    FILE="'file://$(readlink -e "$1" )'"
-    if [ "$FILE" != "'file://'" ]
-    then
-        gsettings set org.gnome.desktop.background picture-uri "$FILE"
-    else
-        echo "File doesn't exist"
-    fi
+  WALLP_NAME="$(basename -- $1)"
+  WALLP_DIR="$HOME/Pictures/shelly-wallpapers"
+  WALLP_PATH="$WALLP_DIR/$WALLP_NAME"
+
+  if [ ! -d "$WALLP_DIR" ] ; then
+    mkdir -p $WALLP_DIR
+  fi
+
+  cp "$1" $WALLP_PATH
+
+  FILE="'file://$(readlink -e "$WALLP_PATH" )'"
+  if [ "$FILE" != "'file://'" ] ; then
+    gsettings set org.gnome.desktop.background picture-uri "$FILE"
+  else
+    echo "Wallpaper doesn't exist"
+  fi
 }
 
 print_title "Setting wallpaper"
-set_wallpaper "$ROOT_DIR/images/wallpapers/dragon1.jpg"
+set_wallpaper "$ROOT_DIR/images/wallpapers/sheldon.jpg"

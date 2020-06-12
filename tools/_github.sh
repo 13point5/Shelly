@@ -12,7 +12,7 @@ print_title "Setting up Git"
 GIT_USER_INFO=$(git config -l)
 
 # Set name if not set
-if [ ! $(grep user.name <<< "$GIT_USER_INFO") ] ; then
+if [ ! "$(grep user.name <<< \"$GIT_USER_INFO)\"" ] ; then
   echo -n "[Git] Enter your name: " ; read GIT_NAME
   git config --global user.name "$GIT_NAME"
 fi
