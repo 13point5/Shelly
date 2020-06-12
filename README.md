@@ -19,9 +19,9 @@ $ bash shelly.sh
 - [x] Wallpaper
 - [x] Slack
 - [x] Spotify
-- [ ] Gnome tweak tools
-- [ ] Gnome Shell extensions
+- [x] Gnome tweak tools
+- [x] Gnome Shell extensions
 - [ ] Theme, Icon pack and Cursor
 - [ ] Terminal color scheme
 - [ ] Nerd Fonts (Ubuntu Mono for now)
-- [ ] Vim config
+- [ ] Custom Prompt & Aliases
