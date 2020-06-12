@@ -32,7 +32,7 @@ $ reboot
 - [x] Wallpaper
 - [x] Gnome Shell extensions
 - [ ] GDM theme
-- [ ] GTK theme
+- [x] GTK theme
 - [ ] Shell theme
 - [ ] Icon pack
 - [ ] Cursor pack

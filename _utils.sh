@@ -14,13 +14,14 @@ is_prog() {
 
 # Install a program from apt if not installed
 # Params:
-#   $1 -> program name in terminal
-#   $2 -> program name to display
+#   $1 -> program name to install
+#   $2 -> program name to check
+#   $3 -> program name to display
 install_apt() {
-  if is_prog $1 ; then
-    print_title "$2 is already installed"
+  if is_prog $2 ; then
+    print_title "$3 is already installed"
   else
-    print_title "Installing $2"
+    print_title "Installing $3"
     sudo apt-get install $1 -y
     sudo apt-get install -f -y
   fi

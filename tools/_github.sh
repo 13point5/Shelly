@@ -5,7 +5,7 @@ ROOT_DIR=$(dirname $(dirname $(realpath $0)))
 source "$ROOT_DIR/_utils.sh"
 
 # Install Git
-install_apt git "Git"
+install_apt git git "Git"
 
 # Setup Git
 print_title "Setting up Git"
