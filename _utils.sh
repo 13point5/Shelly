@@ -1,4 +1,3 @@
-#!/bin/sh
 
 # Dir vars
 SOFTWARE_DIR="$HOME/Softwares"

@@ -1,24 +1,30 @@
+#!/bin/sh
+
+# Get util functions
+ROOT_DIR=$(dirname $(dirname $(realpath $0)))
+CURR_DIR="$ROOT_DIR/styles"
+source "$ROOT_DIR/_utils.sh"
 
 # Install downloaded GNOME shell extensions
 # Params
 #   $1 -> Directory where extensions are stored
 install_extensions() {
-  extensions="$1/*.zip"
+  EXTENSIONS="$1/*.zip"
 
-  for ext in $extensions
+  for EXT in $EXTENSIONS
   do
-    ext_uuid=$(unzip -c "$ext" metadata.json | grep uuid | cut -d \" -f4)
-    ext_path="$HOME/.local/share/gnome-shell/extensions/$ext_uuid"
+    EXT_UUID=$(unzip -c "$EXT" metadata.json | grep uuid | cut -d \" -f4)
+    EXT_PATH="$HOME/.local/share/gnome-shell/extensions/$EXT_UUID"
 
-    if [ ! -d "$ext_path" ] ; then
-      mkdir -p $ext_path
-      unzip -q $ext -d $ext_path
-      gnome-shell-extension-tool -e "$ext_uuid"
+    if [ ! -d "$EXT_PATH" ] ; then
+      mkdir -p $EXT_PATH
+      unzip -q $EXT -d $EXT_PATH
+      gnome-shell-extension-tool -e "$EXT_UUID"
     else
-      echo "$ext_uuid is already installed! Enable manually if needed"
+      echo "$EXT_UUID is already installed! Enable manually if needed"
     fi
   done
-
-  # Restart your Display Manager, mine is gdm
-  sudo systemctl restart gdm
 }
+
+print_title "Installing GNOME Shell extensions"
+install_extensions "$CURR_DIR/shell-extensions"
