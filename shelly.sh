@@ -17,15 +17,11 @@ print_title "Updating and Upgrading"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-# Utils
-print_title "Installing utils"
-sudo apt-get install curl xclip figlet tree -y
+# Tools
+bash $TOOL_DIR/tools.sh
 
 # Styling
 bash $STYLE_DIR/styles.sh
-
-# Tools
-bash $TOOL_DIR/tools.sh
 
 # Programs
 bash $PROG_DIR/programs.sh

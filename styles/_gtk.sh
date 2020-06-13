@@ -2,7 +2,6 @@
 
 # Get util functions
 ROOT_DIR=$(dirname $(dirname $(realpath $0)))
-CURR_DIR="$ROOT_DIR/styles"
 source "$ROOT_DIR/_utils.sh"
 
 # Set GTK theme
@@ -15,28 +14,32 @@ install_gtk() {
     return 1
   fi
 
-  if [[ $1 != *.zip ]] ; then
-    echo "Only zip files supported!"
+  THEME=$(get_basename $1)
+
+  if ! is_last_ok ; then
     return 1
   fi
 
-  THEME="$(basename $1 .zip)"
   THEME_BASE_DIR="$HOME/.themes"
-  THEME_DIR="$THEME_BASE_DIR/$THEME"
 
-  if [ ! -d $THEME_BASE_DIR ] ; then
-    mkdir -p $THEME_BASE_DIR
+  if [ ! -d "$THEME_BASE_DIR" ] ; then
+    mkdir -p "$THEME_BASE_DIR"
   fi
 
-  if [ -d $THEME_DIR ] ; then
+  if [ -d "$THEME_BASE_DIR/$THEME" ] ; then
     echo "Theme already exists!"
     return 1
   fi
 
-  unzip -q $1 -d $THEME_BASE_DIR
+  decompress "$1" "$THEME_BASE_DIR"
+  if ! is_last_ok ; then
+    echo "Could not install gtk theme!"
+    return 1
+  fi
   gsettings set org.gnome.desktop.interface gtk-theme "$THEME"
   gsettings set org.gnome.desktop.wm.preferences theme "$THEME"
+
 }
 
 print_title "Installing GTK theme"
-install_gtk "$CURR_DIR/theme/gtk/Yaru-Blue-dark.zip"
+install_gtk "$ROOT_DIR/resources/gtk/Mojave-dark.tar.xz"

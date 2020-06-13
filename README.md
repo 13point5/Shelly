@@ -34,12 +34,10 @@ $ reboot
 - [ ] GDM theme
 - [x] GTK theme
 - [ ] Shell theme
-- [ ] Icon pack
+- [x] Icon pack
 - [ ] Cursor pack
 - [ ] Terminal color scheme
 - [ ] Nerd Fonts (Ubuntu Mono for now)
 
 ### Miscellaneous
-- [x] Figlet
-- [x] xclip
 - [ ] Custom Prompt & Aliases

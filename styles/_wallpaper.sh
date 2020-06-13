@@ -23,8 +23,9 @@ set_wallpaper() {
     gsettings set org.gnome.desktop.background picture-uri "$FILE"
   else
     echo "Wallpaper doesn't exist"
+    return 1
   fi
 }
 
 print_title "Setting wallpaper"
-set_wallpaper "$ROOT_DIR/images/wallpapers/sheldon.jpg"
+set_wallpaper "$ROOT_DIR/resources/images/wallpapers/sheldon.jpg"

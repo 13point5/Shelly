@@ -18,3 +18,6 @@ bash "$CURR_DIR/_extensions.sh"
 
 # Add GTK theme
 bash "$CURR_DIR/_gtk.sh"
+
+# Add Icon pack
+bash "$CURR_DIR/_icons.sh"

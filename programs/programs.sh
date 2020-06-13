@@ -6,7 +6,6 @@ CURR_DIR="$ROOT_DIR/programs"
 source "$ROOT_DIR/_utils.sh"
 
 # Softwares dir
-SOFTWARE_DIR="$HOME/Softwares"
 if [ -d "$SOFTWARE_DIR" ]; then
   print_title "Software directory already exists!"
 else
