@@ -33,7 +33,7 @@ $ reboot
 - [x] GTK theme
 - [x] Shell theme
 - [x] Icon pack
-- [ ] Cursor pack
+- [x] Cursor pack
 - [ ] GDM theme
 - [ ] Terminal color scheme
 - [ ] Nerd Fonts (Ubuntu Mono for now)

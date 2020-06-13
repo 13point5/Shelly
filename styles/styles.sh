@@ -14,13 +14,16 @@ install_apt gnome-tweaks "GNOME Tweak tools"
 install_apt gnome-shell-extensions "GNOME shell extensions tool"
 
 # Install extensions
-bash "$CURR_DIR/_extensions.sh"
+bash "$CURR_DIR/_extension.sh"
+
+# Shell theme
+bash "$CURR_DIR/_shell.sh"
 
 # Add GTK theme
 bash "$CURR_DIR/_gtk.sh"
 
 # Add Icon pack
-bash "$CURR_DIR/_icons.sh"
+bash "$CURR_DIR/_icon.sh"
 
-# Shell theme
-bash "$CURR_DIR/_shell.sh"
+# Cursor pack
+bash "$CURR_DIR/_cursor.sh"
