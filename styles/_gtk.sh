@@ -42,4 +42,4 @@ install_gtk() {
 }
 
 print_title "Installing GTK theme"
-install_gtk "$ROOT_DIR/resources/gtk/Mojave-dark.tar.xz"
+install_gtk "$ROOT_DIR/resources/gtk-theme/Mojave-dark.tar.xz"

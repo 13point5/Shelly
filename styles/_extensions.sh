@@ -26,4 +26,4 @@ install_extensions() {
 }
 
 print_title "Installing GNOME Shell extensions"
-install_extensions "$CURR_DIR/shell-extensions"
+install_extensions "$ROOT_DIR/resources/shell-extensions/shell-extensions"
