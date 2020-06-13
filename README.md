@@ -1,7 +1,7 @@
 # Shelly
 A shell script to setup a fresh installation of Ubuntu(GNOME) with stuff I usually need.
 
-![Sheldon on Ubuntu](images/sheldon-ubuntu.png)
+![Sheldon on Ubuntu](resources/images/sheldon-ubuntu.png)
 
 ## How to use it?
 ```shell
