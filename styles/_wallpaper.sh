@@ -8,7 +8,7 @@ source "$ROOT_DIR/_utils.sh"
 # Params
 #   $1 -> file location
 set_wallpaper() {
-  WALLP_NAME="$(basename -- $1)"
+  WALLP_NAME=$(basename -- "$1")
   WALLP_DIR="$HOME/Pictures/shelly-wallpapers"
   WALLP_PATH="$WALLP_DIR/$WALLP_NAME"
 

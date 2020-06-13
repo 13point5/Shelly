@@ -7,7 +7,6 @@ A shell script to setup a fresh installation of Ubuntu(GNOME) with stuff I usual
 ```shell
 $ git clone https://github.com/13point5/Shelly.git
 $ cd Shelly
-$ chmod u+rx shelly.sh
 $ bash shelly.sh
 $ reboot
 ```
@@ -31,11 +30,11 @@ $ reboot
 ### Styling
 - [x] Wallpaper
 - [x] Gnome Shell extensions
-- [ ] GDM theme
 - [x] GTK theme
-- [ ] Shell theme
+- [x] Shell theme
 - [x] Icon pack
 - [ ] Cursor pack
+- [ ] GDM theme
 - [ ] Terminal color scheme
 - [ ] Nerd Fonts (Ubuntu Mono for now)
 

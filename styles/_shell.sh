@@ -4,13 +4,13 @@
 ROOT_DIR=$(dirname $(dirname $(realpath $0)))
 source "$ROOT_DIR/_utils.sh"
 
-# Set GTK theme
+# Set Shell theme
 # Params
 #   $1 -> Path of theme
-install_gtk() {
+install_shell_theme() {
 
   if [ ! -f "$1" ] ; then
-    echo "GTK theme source not found!"
+    echo "Shell theme source not found!"
     return 1
   fi
 
@@ -27,19 +27,19 @@ install_gtk() {
   fi
 
   if [ -d "$THEME_BASE_DIR/$THEME" ] ; then
-    echo "GTK theme already exists!"
+    echo "Shell theme already exists!"
     return 1
   fi
 
   decompress "$1" "$THEME_BASE_DIR"
   if ! is_last_ok ; then
-    echo "Could not install GTK theme!"
+    echo "Could not install shell theme!"
     return 1
   fi
-  gsettings set org.gnome.desktop.interface gtk-theme "$THEME"
-  gsettings set org.gnome.desktop.wm.preferences theme "$THEME"
+
+  gsettings set org.gnome.shell.extensions.user-theme name "$THEME"
 
 }
 
-print_title "Installing GTK theme"
-install_gtk "$ROOT_DIR/resources/gtk-theme/Mojave-dark.tar.xz"
+print_title "Installing Shell theme"
+install_shell_theme "$ROOT_DIR/resources/shell-theme/XO_Catalina_NightGR.tar.xz"

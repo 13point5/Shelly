@@ -25,13 +25,12 @@ is_prog() {
 # Install a program from apt if not installed
 # Params:
 #   $1 -> program name to install
-#   $2 -> program name to check
-#   $3 -> program name to display
+#   $2 -> program name to display
 install_apt() {
-  if is_prog $2 ; then
-    print_title "$3 is already installed"
+  if is_prog $1 ; then
+    print_title "$2 is already installed"
   else
-    print_title "Installing $3"
+    print_title "Installing $2"
     sudo apt-get install $1 -y
     sudo apt-get install -f -y
   fi
@@ -59,17 +58,17 @@ install_prog() {
 #   $1 -> source file path
 #   $2 -> destination path
 decompress() {
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)  tar xf $1 -C $2 ;;
-      *.tar.gz)   tar xf $1 -C $2 ;;
-      *.tar.xz)   tar xf $1 -C $2 ;;
-      *.bz2)      tar xf $1 -C $2 ;;
-      *.gz)       gunzip -c $1 > $2 ;;
-      *.tar)      tar xf $1 -C $2 ;;
-      *.tbz2)     tar xf $1 -C $2 ;;
-      *.tgz)      tar xf $1 -C $2 ;;
-      *.zip)      unzip -q $1 -d $2 ;;
+  if [ -f "$1" ] ; then
+    case "$1" in
+      *.tar.bz2)  tar xf "$1" -C $2 ;;
+      *.tar.gz)   tar xf "$1" -C $2 ;;
+      *.tar.xz)   tar xf "$1" -C $2 ;;
+      *.bz2)      tar xf "$1" -C $2 ;;
+      *.gz)       gunzip -c "$1" > $2 ;;
+      *.tar)      tar xf "$1" -C $2 ;;
+      *.tbz2)     tar xf "$1" -C $2 ;;
+      *.tgz)      tar xf "$1" -C $2 ;;
+      *.zip)      unzip -q "$1" -d $2 ;;
       *)          echo "Contents of '$1' cannot be decompressed" ; return 1 ;;
     esac
   else
@@ -85,9 +84,9 @@ decompress() {
 # Params:
 #   $1 -> source file path
 get_basename() {
-  FILE=$(basename -- $1)
-  if [ -f $1 ] ; then
-    case $1 in
+  FILE=$(basename -- "$1")
+  if [ -f "$1" ] ; then
+    case "$1" in
       *.tar.bz2)  echo "${FILE%%.tar.bz2}"   ;;
       *.tar.gz)   echo "${FILE%%.tar.gz}"   ;;
       *.tar.xz)   echo "${FILE%%.tar.xz}"   ;;

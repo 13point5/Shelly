@@ -9,12 +9,12 @@ source "$ROOT_DIR/_utils.sh"
 #   $1 -> Path of icon pack
 install_icons() {
 
-  if [ ! -f $1 ] ; then
+  if [ ! -f "$1" ] ; then
     echo "Icon pack not found!"
     return 1
   fi
 
-  ICON=$(get_basename $1)
+  ICON=$(get_basename "$1")
 
   if ! is_last_ok ; then
     return 1

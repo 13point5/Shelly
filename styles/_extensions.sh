@@ -26,4 +26,5 @@ install_extensions() {
 }
 
 print_title "Installing GNOME Shell extensions"
-install_extensions "$ROOT_DIR/resources/shell-extensions/shell-extensions"
+install_apt gnome-shell-extension-user-theme "GNOME Shell user-theme extension"
+install_extensions "$ROOT_DIR/resources/shell-extensions"
