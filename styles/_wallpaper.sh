@@ -8,17 +8,17 @@ source "$ROOT_DIR/_utils.sh"
 # Params
 #   $1 -> file location
 set_wallpaper() {
-  WALLP_NAME=$(basename -- "$1")
-  WALLP_DIR="$HOME/Pictures/shelly-wallpapers"
-  WALLP_PATH="$WALLP_DIR/$WALLP_NAME"
+  DESK_BG_NAME=$(basename -- "$1")
+  DESK_BG_DIR="$HOME/Pictures/shelly-imgs/wallpapers"
+  DESK_BG_PATH="$DESK_BG_DIR/$DESK_BG_NAME"
 
-  if [ ! -d "$WALLP_DIR" ]; then
-    mkdir -p $WALLP_DIR
+  if [ ! -d "$DESK_BG_DIR" ]; then
+    mkdir -p $DESK_BG_DIR
   fi
 
-  cp "$1" $WALLP_PATH
+  cp "$1" $DESK_BG_PATH
 
-  FILE="'file://$(readlink -e "$WALLP_PATH")'"
+  FILE="'file://$(readlink -e "$DESK_BG_PATH")'"
   if [ "$FILE" != "'file://'" ]; then
     gsettings set org.gnome.desktop.background picture-uri "$FILE"
   else

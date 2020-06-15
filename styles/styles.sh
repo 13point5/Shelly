@@ -5,9 +5,6 @@ ROOT_DIR=$(dirname $(dirname $(realpath $0)))
 CURR_DIR="$ROOT_DIR/styles"
 source "$ROOT_DIR/_utils.sh"
 
-# Set wallpaper
-bash "$CURR_DIR/_wallpaper.sh"
-
 # GNOME Shell stuff
 install_apt dconf-editor "dconf Editor"
 install_apt gnome-tweaks "GNOME Tweak tools"
@@ -27,3 +24,12 @@ bash "$CURR_DIR/_icon.sh"
 
 # Cursor pack
 bash "$CURR_DIR/_cursor.sh"
+
+# Set wallpaper
+bash "$CURR_DIR/_wallpaper.sh"
+
+# Set lockscreen
+bash "$CURR_DIR/_lockscreen.sh"
+
+# Gnome settings
+bash "$CURR_DIR/_gnome.sh"
