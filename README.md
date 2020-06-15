@@ -16,6 +16,7 @@ $ reboot
 ### Tools
 - [x] Git
 - [x] Adding SSH key on GitHub
+- [ ] ZSH
 - [ ] Node with nvm
 - [ ] Yarn
 
@@ -26,6 +27,7 @@ $ reboot
 - [x] Slack
 - [x] Spotify
 - [x] Gnome tweak tools
+- [x] Gnome settings
 
 ### Styling
 - [x] Wallpaper
@@ -34,9 +36,3 @@ $ reboot
 - [x] Shell theme
 - [x] Icon pack
 - [x] Cursor pack
-- [ ] GDM theme
-- [ ] Terminal color scheme
-- [ ] Nerd Fonts (Ubuntu Mono for now)
-
-### Miscellaneous
-- [ ] Custom Prompt & Aliases

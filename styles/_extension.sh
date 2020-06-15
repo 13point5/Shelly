@@ -11,11 +11,11 @@ source "$ROOT_DIR/_utils.sh"
 install_extensions() {
   EXTENSIONS="$1/*.zip"
 
-  for EXT in $EXTENSIONS ; do
+  for EXT in $EXTENSIONS; do
     EXT_UUID=$(unzip -c "$EXT" metadata.json | grep uuid | cut -d \" -f4)
     EXT_PATH="$HOME/.local/share/gnome-shell/extensions/$EXT_UUID"
 
-    if [ ! -d "$EXT_PATH" ] ; then
+    if [ ! -d "$EXT_PATH" ]; then
       mkdir -p $EXT_PATH
       unzip -q $EXT -d $EXT_PATH
       gnome-shell-extension-tool -e "$EXT_UUID"

@@ -29,6 +29,6 @@ ATOM_PKGS=(
 )
 
 print_title "Installing Atom packages"
-for ext in "${ATOM_PKGS[@]}" ; do
+for ext in "${ATOM_PKGS[@]}"; do
   install_atom_pkg $ext
 done

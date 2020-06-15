@@ -6,7 +6,7 @@ source "$ROOT_DIR/_utils.sh"
 
 # VS Code
 install_vscode() {
-  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor >packages.microsoft.gpg
   sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
   sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
   sudo apt-get install apt-transport-https -y
@@ -32,9 +32,10 @@ VSCODE_EXTS=(
   coenraads.bracket-pair-colorizer
   formulahendry.auto-rename-tag
   xabikos.javascriptsnippets
+  pkief.material-icon-theme
 )
 
 print_title "Installing VS Code Extensions"
-for ext in "${VSCODE_EXTS[@]}" ; do
+for ext in "${VSCODE_EXTS[@]}"; do
   install_vscode_ext $ext
 done

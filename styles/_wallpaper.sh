@@ -12,14 +12,14 @@ set_wallpaper() {
   WALLP_DIR="$HOME/Pictures/shelly-wallpapers"
   WALLP_PATH="$WALLP_DIR/$WALLP_NAME"
 
-  if [ ! -d "$WALLP_DIR" ] ; then
+  if [ ! -d "$WALLP_DIR" ]; then
     mkdir -p $WALLP_DIR
   fi
 
   cp "$1" $WALLP_PATH
 
-  FILE="'file://$(readlink -e "$WALLP_PATH" )'"
-  if [ "$FILE" != "'file://'" ] ; then
+  FILE="'file://$(readlink -e "$WALLP_PATH")'"
+  if [ "$FILE" != "'file://'" ]; then
     gsettings set org.gnome.desktop.background picture-uri "$FILE"
   else
     echo "Wallpaper doesn't exist"
