@@ -39,5 +39,5 @@ install_icons() {
   gsettings set org.gnome.desktop.interface icon-theme "$ICON"
 }
 
-print_title "Installing Icon pack"
+log_title "Installing Icon pack"
 install_icons "$ROOT_DIR/resources/icon-pack/Papirus.tar.xz"

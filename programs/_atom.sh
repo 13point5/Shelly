@@ -28,7 +28,7 @@ ATOM_PKGS=(
   file-icons
 )
 
-print_title "Installing Atom packages"
+log_title "Installing Atom packages"
 for ext in "${ATOM_PKGS[@]}"; do
   install_atom_pkg $ext
 done

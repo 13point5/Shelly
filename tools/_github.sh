@@ -8,7 +8,7 @@ source "$ROOT_DIR/_utils.sh"
 install_apt git git "Git"
 
 # Setup Git
-print_title "Setting up Git"
+log_title "Setting up Git"
 GIT_USER_INFO=$(git config -l)
 
 # Set name if not set
@@ -34,7 +34,7 @@ fi
 SSH_KEY_PATH=${HOME}/.ssh/id_rsa.pub
 
 if [ ! -f "$SSH_KEY_PATH" ]; then
-  print_title "Adding SSH key to Github"
+  log_title "Adding SSH key to Github"
   echo -n "[Github] Enter your username: "
   read GIT_USERNAME
   echo -n "[Github] Enter your unique machine name for SSH KEY: "
@@ -43,5 +43,5 @@ if [ ! -f "$SSH_KEY_PATH" ]; then
   ssh-add ~/.ssh/id_rsa
   curl -u $GIT_USERNAME --data '{"title":"'"$GIT_MACHINE_NAME"'","key":"'"$(cat $SSH_KEY_PATH)"'"}' https://api.github.com/user/keys
 else
-  print_title "SSH key already exists locally!"
+  log_title "SSH key already exists locally!"
 fi

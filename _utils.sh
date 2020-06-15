@@ -2,11 +2,24 @@
 # Dir vars for other scripts
 SOFTWARE_DIR="$HOME/Softwares"
 
-# Print title/message of what's going on
-print_title() {
+# Print Title of what's going on
+# Params
+#   $1 -> Title
+log_title() {
   echo
   echo "[$1]"
   echo
+}
+
+
+# Print error message and exit
+# Params
+#   $1 -> Error message
+log_err() {
+  echo
+  echo "[Error] $1" 1>&2
+  echo
+  exit 1
 }
 
 
@@ -28,9 +41,9 @@ is_prog() {
 #   $2 -> program name to display
 install_apt() {
   if is_prog $1 ; then
-    print_title "$2 is already installed"
+    log_title "$2 is already installed"
   else
-    print_title "Installing $2"
+    log_title "Installing $2"
     sudo apt-get install $1 -y
     sudo apt-get install -f -y
   fi
@@ -44,9 +57,9 @@ install_apt() {
 #   $3 -> function to install the program
 install_prog() {
   if is_prog $1 ; then
-    print_title "$2 is already installed"
+    log_title "$2 is already installed"
   else
-    print_title "Installing $2"
+    log_title "Installing $2"
     $3
     sudo apt-get install -f -y
   fi

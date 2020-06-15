@@ -12,12 +12,11 @@ $ reboot
 ```
 
 ## What can it do?
-
 ### Tools
 - [x] Git
 - [x] Adding SSH key on GitHub
-- [ ] ZSH
 - [x] Node.js: nvm and yarn
+- [x] Bash Aliases
 
 ### Programs
 - [x] Chrome
@@ -25,13 +24,14 @@ $ reboot
 - [x] Atom
 - [x] Slack
 - [x] Spotify
-- [x] Gnome tweak tools
-- [x] Gnome settings
 
 ### Styling
 - [x] Wallpaper
+- [x] Lockscreen
+- [x] Gnome tweak tools
 - [x] Gnome Shell extensions
 - [x] GTK theme
 - [x] Shell theme
 - [x] Icon pack
 - [x] Cursor pack
+- [x] Gnome settings

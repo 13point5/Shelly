@@ -7,9 +7,9 @@ source "$ROOT_DIR/_utils.sh"
 
 # Softwares dir
 if [ -d "$SOFTWARE_DIR" ]; then
-  print_title "Software directory already exists!"
+  log_title "Software directory already exists!"
 else
-  print_title "Making software directory at $SOFTWARE_DIR"
+  log_title "Making software directory at $SOFTWARE_DIR"
   mkdir -p $SOFTWARE_DIR
 fi
 

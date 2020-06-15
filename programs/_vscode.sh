@@ -35,7 +35,7 @@ VSCODE_EXTS=(
   pkief.material-icon-theme
 )
 
-print_title "Installing VS Code Extensions"
+log_title "Installing VS Code Extensions"
 for ext in "${VSCODE_EXTS[@]}"; do
   install_vscode_ext $ext
 done

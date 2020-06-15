@@ -4,7 +4,7 @@
 ROOT_DIR=$(dirname $(dirname $(realpath $0)))
 source "$ROOT_DIR/_utils.sh"
 
-print_title "Some nice settings for Gnome"
+log_title "Some nice settings for Gnome"
 gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.gnome.desktop.interface clock-show-date true
 gsettings set org.gnome.desktop.interface clock-show-seconds true

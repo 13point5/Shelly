@@ -27,5 +27,5 @@ set_wallpaper() {
   fi
 }
 
-print_title "Setting lockscreen"
+log_title "Setting lockscreen"
 set_wallpaper "$ROOT_DIR/resources/images/wallpapers/sheldon.jpg"

@@ -13,7 +13,7 @@ TOOL_DIR="$PROJECT_DIR/tools"
 STYLE_DIR="$PROJECT_DIR/styles"
 
 # Update and Upgrade
-print_title "Updating and Upgrading"
+log_title "Updating and Upgrading"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 

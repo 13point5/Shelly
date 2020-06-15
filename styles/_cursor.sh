@@ -40,5 +40,5 @@ install_cursors() {
   gsettings set org.gnome.desktop.interface cursor-theme "$CURSOR"
 }
 
-print_title "Installing Cursor pack"
+log_title "Installing Cursor pack"
 install_cursors "$ROOT_DIR/resources/cursor-pack/material_light_cursors.tar.gz"
