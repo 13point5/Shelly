@@ -17,8 +17,7 @@ $ reboot
 - [x] Git
 - [x] Adding SSH key on GitHub
 - [ ] ZSH
-- [ ] Node with nvm
-- [ ] Yarn
+- [x] Node.js: nvm and yarn
 
 ### Programs
 - [x] Chrome

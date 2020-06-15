@@ -12,3 +12,6 @@ sudo apt-get purge apport -y
 
 # Git and Github
 bash $CURR_DIR/_github.sh
+
+# nvm, node and yarn
+bash $CURR_DIR/_nodejs.sh
