@@ -7,7 +7,7 @@ A shell script to setup a fresh installation of Ubuntu(GNOME) with stuff I usual
 ```shell
 $ git clone https://github.com/13point5/Shelly.git
 $ cd Shelly
-$ bash shelly.sh
+$ bash shelly.sh # enter details for GitHub
 $ reboot
 ```
 
