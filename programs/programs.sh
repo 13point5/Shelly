@@ -14,16 +14,16 @@ else
 fi
 
 # Chrome
-bash $CURR_DIR/_chrome.sh
+bash "$CURR_DIR/_chrome.sh"
 
 # VS Code
-bash $CURR_DIR/_vscode.sh
+bash "$CURR_DIR/_vscode.sh"
 
 # Atom
-bash $CURR_DIR/_atom.sh
+bash "$CURR_DIR/_atom.sh"
 
 # Slack
-bash $CURR_DIR/_slack.sh
+bash "$CURR_DIR/_slack.sh"
 
 # Spotify
-bash $CURR_DIR/_spotify.sh
+bash "$CURR_DIR/_spotify.sh"

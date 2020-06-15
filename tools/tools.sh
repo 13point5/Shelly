@@ -10,8 +10,11 @@ log_title "Installing and removing random stuff"
 sudo apt-get install curl rar xclip xz-utils figlet tree dconf-cli uuid-runtime -y
 sudo apt-get purge apport -y
 
+# Bash aliases
+bash "$CURR_DIR/_bash_aliases.sh"
+
 # Git and Github
-bash $CURR_DIR/_github.sh
+bash "$CURR_DIR/_github.sh"
 
 # nvm, node and yarn
-bash $CURR_DIR/_nodejs.sh
+bash "$CURR_DIR/_nodejs.sh"
