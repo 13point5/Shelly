@@ -12,6 +12,10 @@ set_aliases() {
     log_err "Alias file not found!"
   fi
 
+  if [ -f "$HOME/.bash_aliases" ]; then
+    log_err "Alias file already exists!"
+  fi
+
   cp "$1" "$HOME/.bash_aliases"
   source "$HOME/.bashrc"
 }
