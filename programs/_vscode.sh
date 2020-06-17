@@ -30,7 +30,7 @@ VSCODE_EXTS=(
   esbenp.prettier-vscode
   coenraads.bracket-pair-colorizer
   formulahendry.auto-rename-tag
-  ionutvmi.path-autocomplete
+  christian-kohler.path-intellisense
   pkief.material-icon-theme
 )
 
