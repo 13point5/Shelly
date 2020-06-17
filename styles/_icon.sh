@@ -10,14 +10,13 @@ source "$ROOT_DIR/_utils.sh"
 install_icons() {
 
   if [ ! -f "$1" ]; then
-    echo "Icon pack not found!"
-    return 1
+    log_err "Icon pack not found!"
   fi
 
   ICON=$(get_basename "$1")
 
   if ! is_last_ok; then
-    return 1
+    log_err "Could not identify Icon pack source"
   fi
 
   ICON_BASE_DIR="$HOME/.icons"
@@ -27,15 +26,14 @@ install_icons() {
   fi
 
   if [ -d "$ICON_BASE_DIR/$ICON" ]; then
-    echo "Icon pack already exists!"
-    return 1
+    log_err "Icon pack already exists! Aborting Installation"
   fi
 
   decompress "$1" "$ICON_BASE_DIR"
   if ! is_last_ok; then
-    echo "Could not install icon pack!"
-    return 1
+    log_err "Could not install icon pack!"
   fi
+  
   gsettings set org.gnome.desktop.interface icon-theme "$ICON"
 }
 

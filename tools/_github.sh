@@ -43,5 +43,5 @@ if [ ! -f "$SSH_KEY_PATH" ]; then
   ssh-add ~/.ssh/id_rsa
   curl -u $GIT_USERNAME --data '{"title":"'"$GIT_MACHINE_NAME"'","key":"'"$(cat $SSH_KEY_PATH)"'"}' https://api.github.com/user/keys
 else
-  log_title "SSH key already exists locally!"
+  log_warn "SSH key already exists locally!"
 fi

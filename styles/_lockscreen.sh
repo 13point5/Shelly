@@ -22,8 +22,7 @@ set_wallpaper() {
   if [ "$FILE" != "'file://'" ]; then
     gsettings set org.gnome.desktop.screensaver picture-uri "$FILE"
   else
-    echo "Lockscreen doesn't exist"
-    return 1
+    log_err "Lockscreen doesn't exist"
   fi
 }
 

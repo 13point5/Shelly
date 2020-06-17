@@ -10,14 +10,13 @@ source "$ROOT_DIR/_utils.sh"
 install_gtk() {
 
   if [ ! -f "$1" ]; then
-    echo "GTK theme source not found!"
-    return 1
+    log_err "GTK theme source not found!"
   fi
 
   THEME=$(get_basename "$1")
 
   if ! is_last_ok; then
-    return 1
+    log_err "Could not identify GTK theme source"
   fi
 
   THEME_BASE_DIR="$HOME/.themes"
@@ -27,15 +26,14 @@ install_gtk() {
   fi
 
   if [ -d "$THEME_BASE_DIR/$THEME" ]; then
-    echo "GTK theme already exists!"
-    return 1
+    log_err "GTK theme already exists! Aborting Installation"
   fi
 
   decompress "$1" "$THEME_BASE_DIR"
   if ! is_last_ok; then
-    echo "Could not install GTK theme!"
-    return 1
+    log_err "Could not install GTK theme!"
   fi
+
   gsettings set org.gnome.desktop.interface gtk-theme "$THEME"
   gsettings set org.gnome.desktop.wm.preferences theme "$THEME"
 

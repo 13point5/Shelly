@@ -54,7 +54,7 @@ is_prog() {
 #   $2 -> program name to display
 install_apt() {
   if is_prog $1 ; then
-    log_title "$2 is already installed"
+    log_warn "$2 is already installed"
   else
     log_title "Installing $2"
     sudo apt-get install $1 -y
@@ -70,7 +70,7 @@ install_apt() {
 #   $3 -> function to install the program
 install_prog() {
   if is_prog $1 ; then
-    log_title "$2 is already installed"
+    log_warn "$2 is already installed"
   else
     log_title "Installing $2"
     $3
@@ -95,14 +95,11 @@ decompress() {
       *.tbz2)     tar xf "$1" -C $2 ;;
       *.tgz)      tar xf "$1" -C $2 ;;
       *.zip)      unzip -q "$1" -d $2 ;;
-      *)          echo "Contents of '$1' cannot be decompressed" ; return 1 ;;
+      *)          log_err "Contents of '$1' cannot be decompressed" ;;
     esac
   else
-    echo "'$1' is not recognized as a compressed file"
-    return 1
+    log_err "'$1' is not recognized as a compressed file"
   fi
-
-  return 0
 }
 
 
@@ -126,14 +123,11 @@ get_basename() {
       *.zip)      echo "${FILE%%.zip}"   ;;
       *.Z)        echo "${FILE%%.Z}"   ;;
       *.7z)       echo "${FILE%%.7z}"   ;;
-      *)          echo "Basename of '$1' cannot be identified" ; return 1 ;;
+      *)          log_err "Basename of '$1' cannot be identified" ;;
     esac
   else
-    echo "'$1' is not recognized as a compressed file"
-    return 1
+    log_err "'$1' is not recognized as a compressed file"
   fi
-
-  return 0
 }
 
 # Get latest release version of a github repo

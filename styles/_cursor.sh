@@ -10,15 +10,13 @@ source "$ROOT_DIR/_utils.sh"
 install_cursors() {
 
   if [ ! -f "$1" ]; then
-    echo "Cursor pack not found!"
-    return 1
+    log_err "Cursor pack not found!"
   fi
 
   CURSOR=$(get_basename "$1")
 
   if ! is_last_ok; then
-    echo "Couldn't identify cursor pack"
-    return 1
+    log_err "Couldn't identify cursor pack source"
   fi
 
   CURSOR_BASE_DIR="$HOME/.icons"
@@ -28,15 +26,14 @@ install_cursors() {
   fi
 
   if [ -d "$CURSOR_BASE_DIR/$CURSOR" ]; then
-    echo "Cursor pack already exists!"
-    return 1
+    log_err "Cursor pack already exists! Aborting Installation"
   fi
 
   decompress "$1" "$CURSOR_BASE_DIR"
   if ! is_last_ok; then
-    echo "Could not install cursor pack!"
-    return 1
+    log_err "Could not install cursor pack!"
   fi
+
   gsettings set org.gnome.desktop.interface cursor-theme "$CURSOR"
 }
 

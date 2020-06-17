@@ -20,7 +20,7 @@ install_extensions() {
       unzip -q $EXT -d $EXT_PATH
       gnome-shell-extension-tool -e "$EXT_UUID"
     else
-      echo "$EXT_UUID is already installed! Enable manually if needed"
+      log_warn "$EXT_UUID is already installed! Enable manually if needed"
     fi
   done
 }

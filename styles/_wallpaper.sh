@@ -22,8 +22,7 @@ set_wallpaper() {
   if [ "$FILE" != "'file://'" ]; then
     gsettings set org.gnome.desktop.background picture-uri "$FILE"
   else
-    echo "Wallpaper doesn't exist"
-    return 1
+    log_err "Wallpaper doesn't exist"
   fi
 }
 

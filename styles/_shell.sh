@@ -10,14 +10,13 @@ source "$ROOT_DIR/_utils.sh"
 install_shell_theme() {
 
   if [ ! -f "$1" ]; then
-    echo "Shell theme source not found!"
-    return 1
+    log_err "Shell theme source not found!"
   fi
 
   THEME=$(get_basename "$1")
 
   if ! is_last_ok; then
-    return 1
+    log_err "Could not identify Shell theme source"
   fi
 
   THEME_BASE_DIR="$HOME/.themes"
@@ -27,14 +26,12 @@ install_shell_theme() {
   fi
 
   if [ -d "$THEME_BASE_DIR/$THEME" ]; then
-    echo "Shell theme already exists!"
-    return 1
+    log_err "Shell theme already exists! Aborting Installation"
   fi
 
   decompress "$1" "$THEME_BASE_DIR"
   if ! is_last_ok; then
-    echo "Could not install shell theme!"
-    return 1
+    log_err "Could not install shell theme!"
   fi
 
   gsettings set org.gnome.shell.extensions.user-theme name "$THEME"
