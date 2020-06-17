@@ -13,7 +13,7 @@ mkcd () {
 alias apt="sudo apt-get -y"
 
 # react
-alias ncra="npx cra"
+alias ncra="npx create-react-app"
 
 # git
 alias ga="git add"
