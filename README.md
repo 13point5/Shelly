@@ -22,6 +22,7 @@ $ reboot
 - [x] Chrome
 - [x] VS Code
 - [x] Atom
+- [x] Sublime text
 - [x] Slack
 - [x] Spotify
 

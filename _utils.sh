@@ -2,7 +2,8 @@
 # Dir vars for other scripts
 SOFTWARE_DIR="$HOME/Softwares"
 
-# Print Title of what's going on
+
+# Log Title of what's going on
 # Params
 #   $1 -> Title
 log_title() {
@@ -12,12 +13,22 @@ log_title() {
 }
 
 
+# Log warning
+# Params
+#   $1 -> Warning message
+log_warn() {
+  echo
+  echo "##Warning## $1"
+  echo
+}
+
+
 # Print error message and exit
 # Params
 #   $1 -> Error message
 log_err() {
   echo
-  echo "[Error] $1" 1>&2
+  echo "!!Error!! $1" 1>&2
   echo
   exit 1
 }
@@ -30,6 +41,8 @@ is_last_ok() {
 
 
 # Check if a program is installed
+# Params
+#   $1 -> Program name
 is_prog() {
   command -v "$1" >/dev/null 2>&1
 }

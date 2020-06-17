@@ -7,7 +7,7 @@ source "$ROOT_DIR/_utils.sh"
 
 # Softwares dir
 if [ -d "$SOFTWARE_DIR" ]; then
-  log_title "Software directory already exists!"
+  log_warn "Software directory already exists!"
 else
   log_title "Making software directory at $SOFTWARE_DIR"
   mkdir -p $SOFTWARE_DIR
@@ -21,6 +21,9 @@ bash "$CURR_DIR/_vscode.sh"
 
 # Atom
 bash "$CURR_DIR/_atom.sh"
+
+# Sublime text
+bash "$CURR_DIR/_sublime.sh"
 
 # Slack
 bash "$CURR_DIR/_slack.sh"
