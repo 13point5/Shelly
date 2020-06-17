@@ -8,7 +8,17 @@ SOFTWARE_DIR="$HOME/Softwares"
 #   $1 -> Title
 log_title() {
   echo
-  echo "[$1]"
+  echo -e "\e[30;48;5;255m$1\e[0m"
+  echo
+}
+
+
+# Log success
+# Params
+#   $1 -> Success message
+log_ok() {
+  echo
+  echo -e "\e[30;48;5;82m$1\e[0m"
   echo
 }
 
@@ -18,17 +28,17 @@ log_title() {
 #   $1 -> Warning message
 log_warn() {
   echo
-  echo "##Warning## $1"
+  echo -e "\e[30;48;5;11m$1\e[0m"
   echo
 }
 
 
-# Print error message and exit
+# Log error message and exit
 # Params
 #   $1 -> Error message
 log_err() {
   echo
-  echo "!!Error!! $1" 1>&2
+  echo -e "\e[48;5;9;37m$1\e[0m" 1>&2
   echo
   exit 1
 }
@@ -48,6 +58,13 @@ is_prog() {
 }
 
 
+# Fix and remove apt packages
+apt_nurse() {
+  sudo apt-get install -f -y
+  sudo apt-get autoremove -y
+}
+
+
 # Install a program from apt if not installed
 # Params:
 #   $1 -> program name to install
@@ -58,7 +75,13 @@ install_apt() {
   else
     log_title "Installing $2"
     sudo apt-get install $1 -y
-    sudo apt-get install -f -y
+
+    if ! is_last_ok; then
+      log_err "Could not install $2"
+    fi
+    
+    apt_nurse
+    log_ok "Successfully installed $2"
   fi
 }
 
@@ -74,7 +97,13 @@ install_prog() {
   else
     log_title "Installing $2"
     $3
-    sudo apt-get install -f -y
+
+    if ! is_last_ok; then
+      log_err "Could not install $2"
+    fi
+
+    apt_nurse
+    log_ok "Successfully installed $2"
   fi
 }
 
