@@ -26,12 +26,11 @@ install_vscode_ext() {
 VSCODE_EXTS=(
   dbaeumer.vscode-eslint
   ms-python.python
-  vscodevim.vim
   dracula-theme.theme-dracula
   esbenp.prettier-vscode
   coenraads.bracket-pair-colorizer
   formulahendry.auto-rename-tag
-  xabikos.javascriptsnippets
+  ionutvmi.path-autocomplete
   pkief.material-icon-theme
 )
 
