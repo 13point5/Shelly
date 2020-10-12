@@ -8,7 +8,7 @@ source "$ROOT_DIR/_utils.sh"
 install_nvm() {
   nvm_version=$(get_latest_release "nvm-sh/nvm")
   wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/$nvm_version/install.sh | bash
-  sleep 1
+  sleep 2
   nvm install --lts
 }
 

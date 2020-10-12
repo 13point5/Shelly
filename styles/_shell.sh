@@ -39,4 +39,4 @@ install_shell_theme() {
 }
 
 log_title "Installing Shell theme"
-install_shell_theme "$ROOT_DIR/resources/shell-theme/XO_Catalina_NightGR.tar.xz"
+install_shell_theme "$ROOT_DIR/resources/styling/shell-theme/XO_Catalina_NightGR.tar.xz"

@@ -2,7 +2,6 @@
 
 # Get util functions
 ROOT_DIR=$(dirname $(dirname $(realpath $0)))
-CURR_DIR="$ROOT_DIR/styles"
 source "$ROOT_DIR/_utils.sh"
 
 # Install downloaded GNOME shell extensions
@@ -27,4 +26,4 @@ install_extensions() {
 
 log_title "Installing GNOME Shell extensions"
 install_apt gnome-shell-extension-user-theme "GNOME Shell user-theme extension"
-install_extensions "$ROOT_DIR/resources/shell-extensions"
+install_extensions "$ROOT_DIR/resources/styling/shell-extensions"

@@ -38,4 +38,4 @@ install_icons() {
 }
 
 log_title "Installing Icon pack"
-install_icons "$ROOT_DIR/resources/icon-pack/Papirus.tar.xz"
+install_icons "$ROOT_DIR/resources/styling/icon-pack/Papirus.tar.xz"

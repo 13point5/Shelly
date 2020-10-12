@@ -11,7 +11,7 @@ sudo apt-get install curl rar xclip xz-utils figlet tree dconf-cli uuid-runtime 
 sudo apt-get purge apport -y
 
 # Bash aliases
-bash "$CURR_DIR/_bash_aliases.sh"
+bash "$CURR_DIR/_aliases.sh"
 
 # Git and Github
 bash "$CURR_DIR/_github.sh"

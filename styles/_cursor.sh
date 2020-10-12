@@ -38,4 +38,4 @@ install_cursors() {
 }
 
 log_title "Installing Cursor pack"
-install_cursors "$ROOT_DIR/resources/cursor-pack/material_light_cursors.tar.gz"
+install_cursors "$ROOT_DIR/resources/styling/cursor-pack/material_light_cursors.tar.gz"
